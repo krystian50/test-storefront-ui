@@ -1,0 +1,28 @@
+@import "../../helpers";
+
+.sf-price {
+  &__value {
+    margin: var(--price-margin);
+    color: var(--price-color, var(--c-text));
+    font: var(
+      --price-font,
+      font(
+        --price,
+        400,
+        var(--font-size-big),
+        1.6,
+        var(--body-font-family-primary)
+      )
+    );
+    text-decoration: var(--price-text-decoration);
+    &--special {
+      --price-color: var(--c-danger);
+      --price-margin: 0 var(--spacer-small) 0 0;
+    }
+    &--old {
+      --price-color: var(--c-text-muted);
+      --price-font-size: var(--font-size-small);
+      --price-text-decoration: line-through;
+    }
+  }
+}

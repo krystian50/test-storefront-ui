@@ -1,0 +1,33 @@
+@import "../../helpers";
+
+.sf-badge {
+  display: inline-block;
+  box-sizing: border-box;
+  width: var(--badge-width);
+  height: var(--badge-height);
+  padding: var(--badge-padding, var(--spacer-small) var(--spacer));
+  border: var(--badge-border);
+  border-radius: var(--badge-border-radius);
+  background: var(--badge-background, var(--c-primary));
+  color: var(--badge-color, var(--c-white));
+  font: var(
+    --badge-font,
+    font(
+      --badge,
+      500,
+      var(--font-size-small),
+      1.6,
+      var(--body-font-family-secondary)
+    )
+  );
+  text-align: var(--badge-text-align, center);
+  &--full-width {
+    --badge-width: 100%;
+  }
+  @each $color, $map in $colors-map {
+    $primary: map-get($map, "primary");
+    &.color-#{$color} {
+      --badge-background: #{$primary};
+    }
+  }
+}

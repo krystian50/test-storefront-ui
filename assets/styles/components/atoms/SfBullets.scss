@@ -1,0 +1,24 @@
+@import "../../helpers";
+
+.sf-bullet {
+  box-sizing: border-box;
+  width: var(--bullet-width, var(--bullet-size, 8px));
+  height: var(--bullet-height, var(--bullet-size, 8px));
+  margin: var(--bullet-margin, var(--spacer-small));
+  border-radius: var(--bullet-border-radius, 100%);
+  background: var(--bullet-background, var(--c-gray));
+  cursor: pointer;
+  &--active {
+    --bullet-size: 0.625rem;
+    --bullet-background: var(--c-primary);
+    cursor: default;
+  }
+}
+
+.sf-bullets {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}

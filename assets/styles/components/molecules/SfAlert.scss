@@ -1,0 +1,28 @@
+@import "../../helpers";
+
+.sf-alert {
+  --icon-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--alert-color);
+  font: var(
+    --alert-font,
+    font(
+      --alert,
+      400,
+      var(--font-size-regular),
+      1.6,
+      var(--body-font-family-secondary)
+    )
+  );
+  &__message {
+    margin: var(--alert-message-margin, 0 0 0 0.625rem);
+  }
+  @each $color, $map in $colors-map {
+    $primary: map-get($map, "primary");
+    &.color-#{$color} {
+      --icon-color: #{$primary};
+      --alert-color: #{$primary};
+    }
+  }
+}
